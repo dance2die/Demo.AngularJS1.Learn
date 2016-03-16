@@ -1,7 +1,28 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+	ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@section ScriptBody
+{
+
+	<script src="~/Scripts/angular.min.js"></script>
+	<script src="~/js/controllers/Home/defaultCtrl.js"></script>
+
+}
+
+<div ng-app="exampleApp">
+	<div ng-controller="defaultCtrl">
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3>Products</h3>
+			</div>
+			<div class="panel-body">
+				Content will go here
+			</div>
+		</div>
+
+	</div>
+</div>
 
