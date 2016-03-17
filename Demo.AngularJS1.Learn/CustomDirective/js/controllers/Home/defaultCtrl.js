@@ -2,8 +2,13 @@
 
 	angular.module("exampleApp", [])
 		.directive("unorderedList", function() {
-			return function(scope, element, attr) {
-				// implementation code goes here
+			return function(scope, element, attrs) {
+				var data = scope[attrs["unorderedList"]];
+				if (angular.isArray(data)) {
+					for (var i = 0; i < data.length; i++) {
+						console.log("Item: " + data[i].name);
+					}
+				}
 			};
 		})
 		.controller("defaultCtrl", function ($scope) {
