@@ -11,16 +11,19 @@
 					element.append(listElem);
 
 					for (var i = 0; i < data.length; i++) {
-						var itemElement = angular.element("<li>");
-						listElem.append(itemElement);
+						(function() {
+							var itemElement = angular.element("<li>");
+							listElem.append(itemElement);
+							var index = i;
 
-						var watcherFn = function(watchScope) {
-							return watchScope.$eval(propertyExpression, data[i]);
-						};
+							var watcherFn = function (watchScope) {
+								return watchScope.$eval(propertyExpression, data[index]);
+							};
 
-						scope.$watch(watcherFn, function(newValue, oldValue) {
-							itemElement.text(newValue);
-						});
+							scope.$watch(watcherFn, function (newValue, oldValue) {
+								itemElement.text(newValue);
+							});
+						})();
 					}
 				}
 			};
