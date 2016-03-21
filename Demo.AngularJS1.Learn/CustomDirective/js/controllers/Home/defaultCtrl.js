@@ -5,7 +5,7 @@
 			return {
 				link:
 					function (scope, element, attrs) {
-						var data = scope[attrs["unorderedList"]];
+						var data = scope[attrs["unorderedList"]] || scope[attrs["listSource"]];
 						var propertyExpression = attrs["listProperty"];
 
 						if (angular.isArray(data)) {
