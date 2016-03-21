@@ -5,31 +5,11 @@
 			return {
 				link:
 					function (scope, element, attrs) {
-						var data = scope[attrs["unorderedList"] || attrs["listSource"]];
-						var propertyExpression = attrs["listProperty"];
-
-						if (angular.isArray(data)) {
-							var listElem = angular.element("<ul>");
-							element.append(listElem);
-
-							for (var i = 0; i < data.length; i++) {
-								(function () {
-									var itemElement = angular.element("<li>");
-									listElem.append(itemElement);
-									var index = i;
-
-									var watcherFn = function (watchScope) {
-										return watchScope.$eval(propertyExpression, data[index]);
-									};
-
-									scope.$watch(watcherFn, function (newValue, oldValue) {
-										itemElement.text(newValue);
-									});
-								})();
-							}
-						}
+						scope.data = scope[attrs["unorderedList"]];
 					},
-				restrict: 'EACM'
+				restrict: 'A',
+				template: "<ul><li ng-repeat='item in data'>"
+					+ "{{item.price | currency}}</li></ul>"
 			}
 		})
 		.controller("defaultCtrl", function ($scope) {
