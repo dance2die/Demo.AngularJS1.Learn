@@ -1,32 +1,36 @@
 ﻿(function ($, undefined) {
 
 	angular.module("exampleApp", [])
-		.directive("unorderedList", function() {
-			return function(scope, element, attrs) {
-				var data = scope[attrs["unorderedList"]];
-				var propertyExpression = attrs["listProperty"];
+		.directive("unorderedList", function () {
+			return {
+				link:
+					function (scope, element, attrs) {
+						var data = scope[attrs["unorderedList"]];
+						var propertyExpression = attrs["listProperty"];
 
-				if (angular.isArray(data)) {
-					var listElem = angular.element("<ul>");
-					element.append(listElem);
+						if (angular.isArray(data)) {
+							var listElem = angular.element("<ul>");
+							element.append(listElem);
 
-					for (var i = 0; i < data.length; i++) {
-						(function() {
-							var itemElement = angular.element("<li>");
-							listElem.append(itemElement);
-							var index = i;
+							for (var i = 0; i < data.length; i++) {
+								(function () {
+									var itemElement = angular.element("<li>");
+									listElem.append(itemElement);
+									var index = i;
 
-							var watcherFn = function (watchScope) {
-								return watchScope.$eval(propertyExpression, data[index]);
-							};
+									var watcherFn = function (watchScope) {
+										return watchScope.$eval(propertyExpression, data[index]);
+									};
 
-							scope.$watch(watcherFn, function (newValue, oldValue) {
-								itemElement.text(newValue);
-							});
-						})();
-					}
-				}
-			};
+									scope.$watch(watcherFn, function (newValue, oldValue) {
+										itemElement.text(newValue);
+									});
+								})();
+							}
+						}
+					},
+				restrict: 'EACM'
+			}
 		})
 		.controller("defaultCtrl", function ($scope) {
 			$scope.products = [
