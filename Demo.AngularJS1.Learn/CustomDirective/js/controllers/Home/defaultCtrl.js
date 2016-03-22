@@ -8,9 +8,10 @@
 						scope.data = scope[attrs["unorderedList"]];
 					},
 				restrict: 'A',
-				template: function() {
-					return angular.element(document.querySelector("#listTemplate")).html();
-				}
+				//template: function() {
+				//	return angular.element(document.querySelector("#listTemplate")).html();
+				//}
+				templateUrl: "js/controllers/Home/itemTemplate.html"
 			}
 		})
 		.controller("defaultCtrl", function ($scope) {
