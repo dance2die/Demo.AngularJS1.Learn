@@ -8,8 +8,9 @@
 						scope.data = scope[attrs["unorderedList"]];
 					},
 				restrict: 'A',
-				template: "<ul><li ng-repeat='item in data'>"
-					+ "{{item.price | currency}}</li></ul>"
+				template: function() {
+					return angular.element(document.querySelector("#listTemplate")).html();
+				}
 			}
 		})
 		.controller("defaultCtrl", function ($scope) {
