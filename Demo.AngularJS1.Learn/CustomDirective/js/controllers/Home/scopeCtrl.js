@@ -6,7 +6,7 @@
 				template: function() {
 					return angular.element(document.querySelector("#scopeTemplate")).html();
 				},
-				scope: true
+				scope: {}
 			}
 		})
 		.controller("scopeCtrl", function ($scope) {
