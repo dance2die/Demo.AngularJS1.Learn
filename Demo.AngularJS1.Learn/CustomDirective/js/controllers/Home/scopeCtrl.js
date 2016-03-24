@@ -7,7 +7,7 @@
 					return angular.element(document.querySelector("#scopeTemplate")).html();
 				},
 				scope: {
-					local: "@nameprop"
+					local: "=nameprop"
 				}
 			}
 		})
