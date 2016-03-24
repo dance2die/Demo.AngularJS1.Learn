@@ -6,7 +6,9 @@
 				template: function() {
 					return angular.element(document.querySelector("#scopeTemplate")).html();
 				},
-				scope: {}
+				scope: {
+					local: "@nameprop"
+				}
 			}
 		})
 		.controller("scopeCtrl", function ($scope) {

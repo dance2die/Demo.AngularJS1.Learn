@@ -15,15 +15,20 @@
 	<div ng-controller="scopeCtrl">
 		<script type="text/ng-template" id="scopeTemplate">
 			<div class="panel-body">
-				<p>Name: <input ng-model="data.name" /></p>
+				@*<p>Name: <input ng-model="data.name" /></p>
 				<p>City: <input ng-model="city" /></p>
-				<p>Country: <input ng-model="country" /></p>
+				<p>Country: <input ng-model="country" /></p>*@
+				<p>Data Value: {{local}}</p>
 			</div>
 		</script>
 
 		<div class="panel panel-default">
-			<div class="panel-body" scope-demo></div>
-			<div class="panel-body" scope-demo></div>
+			@*<div class="panel-body" scope-demo></div>
+			<div class="panel-body" scope-demo></div>*@
+			<div class="panel-body">
+				Direct Binding: <input ng-model="data.name" />
+			</div>
+			<div class="panel-body" scope-demo nameprop="{{data.name}}"></div>
 		</div>
 	</div>
 </div>
