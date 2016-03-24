@@ -7,13 +7,20 @@
 					return angular.element(document.querySelector("#scopeTemplate")).html();
 				},
 				scope: {
-					local: "=nameprop"
+					local: "=nameprop",
+					cityFn: "&city"
 				}
 			}
 		})
 		.controller("scopeCtrl", function ($scope) {
-			$scope.data = { name: "Adam" };
-			$scope.city = "London";
+			$scope.data = {
+				name: "Adam",
+				defaultCity: "London"
+			};
+			
+			$scope.getCity = function(name) {
+				return name === "Adam" ? $scope.data.defaultCity : "Unknown";
+			}
 		});
 
 })();
