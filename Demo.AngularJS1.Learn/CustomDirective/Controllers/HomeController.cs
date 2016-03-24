@@ -19,5 +19,10 @@ namespace CustomDirective.Controllers
 	    {
 		    return View();
 	    }
+
+	    public ActionResult DirectiveControllers()
+	    {
+		    return View();
+	    }
     }
 }
