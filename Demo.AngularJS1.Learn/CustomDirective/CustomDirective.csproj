@@ -98,6 +98,7 @@
     <Content Include="Global.asax" />
     <Content Include="js\controllers\Home\defaultCtrl.js" />
     <Content Include="js\controllers\Home\itemTemplate.html" />
+    <Content Include="js\controllers\Home\tableTemplate.html" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />

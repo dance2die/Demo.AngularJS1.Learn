@@ -11,7 +11,11 @@
 				//template: function() {
 				//	return angular.element(document.querySelector("#listTemplate")).html();
 				//}
-				templateUrl: "js/controllers/Home/itemTemplate.html"
+				//templateUrl: "js/controllers/Home/itemTemplate.html"
+				templateUrl: function(elem, attrs) {
+					return "js/controllers/Home/" +
+						((attrs["template"] === "table") ? "tableTemplate.html" : "itemTemplate.html");
+				}
 			}
 		})
 		.controller("defaultCtrl", function ($scope) {
