@@ -20,7 +20,7 @@
 					<p>Country: <input ng-model="country" /></p>
 					<p>Data Value: {{local}}</p>*@
 				@*<p>Data Value: <input ng-model="local" /></p>*@
-				<p>Name: {{local}}, City: {{cityFn()}}</p>
+				<p>Name: {{local}}, City: {{cityFn({nameVal: local})}}</p>
 			</div>
 		</script>
 
@@ -31,7 +31,8 @@
 				Direct Binding: <input ng-model="data.name" />
 			</div>
 			@*<div class="panel-body" scope-demo nameprop="data.name"></div>*@
-			<div class="panel-body" scope-demo city="getCity(data.name)" nameprop="data.name"></div>
+			@*<div class="panel-body" scope-demo city="getCity(data.name)" nameprop="data.name"></div>*@
+			<div class="panel-body" scope-demo city="getCity(nameVal)" nameprop="data.name"></div>
 		</div>
 	</div>
 </div>
