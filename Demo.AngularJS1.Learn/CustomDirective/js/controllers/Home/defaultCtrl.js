@@ -15,7 +15,8 @@
 				templateUrl: function(elem, attrs) {
 					return "js/controllers/Home/" +
 						((attrs["template"] === "table") ? "tableTemplate.html" : "itemTemplate.html");
-				}
+				},
+				replace: true
 			}
 		})
 		.controller("defaultCtrl", function ($scope) {
