@@ -98,6 +98,7 @@
     <Content Include="Global.asax" />
     <Content Include="js\controllers\Home\defaultCtrl.js" />
     <Content Include="js\controllers\Home\itemTemplate.html" />
+    <Content Include="js\controllers\Home\scopeCtrl.js" />
     <Content Include="js\controllers\Home\tableTemplate.html" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
@@ -133,6 +134,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-2.2.1.min.map" />
+    <Content Include="Views\Home\ScopeControl.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

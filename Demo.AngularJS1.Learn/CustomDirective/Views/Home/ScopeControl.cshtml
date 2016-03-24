@@ -1,0 +1,19 @@
+﻿
+@{
+	ViewBag.Title = "ScopeControl";
+}
+
+@section ScriptBody
+{
+
+	<script src="~/Scripts/angular.min.js"></script>
+	<script src="~/js/controllers/Home/scopeCtrl.js"></script>
+
+}
+<h2>Scope Control</h2>
+<div ng-app="exampleApp">
+	<div ng-controller="scopeCtrl">
+		<div class="panel-body" scope-demo></div>
+		<div class="panel-body" scope-demo></div>
+	</div>
+</div>
