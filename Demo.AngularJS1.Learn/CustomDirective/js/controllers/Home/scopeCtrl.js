@@ -3,12 +3,15 @@
 	angular.module("exampleApp", [])
 		.directive("scopeDemo", function() {
 			return {
-				template: "<div class='panel-body'>Name: <input ng-model=name /></div>",
+				template: function() {
+					return angular.element(document.querySelector("#scopeTemplate")).html();
+				},
 				scope: true
 			}
 		})
 		.controller("scopeCtrl", function ($scope) {
-			// do nothing - no behaviors required
+			$scope.data = { name: "Adam" };
+			$scope.city = "London";
 		});
 
 })();

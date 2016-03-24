@@ -13,6 +13,14 @@
 <h2>Scope Control</h2>
 <div ng-app="exampleApp">
 	<div ng-controller="scopeCtrl">
+		<script type="text/ng-template" id="scopeTemplate">
+			<div class="panel-body">
+				<p>Name: <input ng-model="data.name" /></p>
+				<p>City: <input ng-model="city" /></p>
+				<p>Country: <input ng-model="country" /></p>
+			</div>
+		</script>
+
 		<div class="panel panel-default">
 			<div class="panel-body" scope-demo></div>
 			<div class="panel-body" scope-demo></div>
