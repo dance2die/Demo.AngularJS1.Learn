@@ -139,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="js\controllers\Home\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
