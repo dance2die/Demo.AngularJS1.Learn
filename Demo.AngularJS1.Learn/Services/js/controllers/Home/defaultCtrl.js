@@ -7,7 +7,6 @@
 			};
 
 			$scope.$watch("data.totalClicks", function (newVal) {
-//				console.log("Total Click Count: " + newVal);
 				logService.log("Total click count: " + newVal);
 			});
 		}]);
