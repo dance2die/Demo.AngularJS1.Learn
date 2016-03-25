@@ -3,6 +3,15 @@
 	ViewBag.Title = "CustomForms";
 }
 
+@section CSS{
+	<style>
+		*.error { 
+			color:red; 
+			font-weight: bold; 
+		}
+	</style>
+}
+
 @section ScriptBody
 {
 	<script src="~/Scripts/angular.min.js"></script>
@@ -14,6 +23,9 @@
 				<button class="btn btn-default">No</button>
 				<button class="btn btn-default">Not Sure</button>
 			</div>
+			<span class="error" ng-show="myForm.decision.$error.confidence">
+				You need to be sure
+			</span>
 		</div>
 	</script>
 
@@ -29,6 +41,14 @@
 					require: "ngModel",
 					template: document.querySelector("#triTemplate").outerText,
 					link: function (scope, element, attrs, ctrl) {
+						var validateParser = function (value) {
+							var valid = (value === "Yes" || value === "No");
+							ctrl.$setValidity("confidence", valid);
+							return valid ? value : undefined;
+						}
+						ctrl.$parsers.push(validateParser);
+
+
 						var setSelected = function (value) {
 							var buttons = element.find("button");
 							buttons.removeClass("btn-primary");
@@ -52,6 +72,7 @@
 						});
 
 						ctrl.$render = function () {
+							validateParser(ctrl.$viewValue);
 							setSelected(ctrl.$viewValue || "Not Sure");
 						}
 					}
@@ -63,9 +84,13 @@
 <h2>CustomForms</h2>
 
 <div ng-app="exampleApp" ng-controller="defaultCtrl">
-	<div>
+	@*<div>
 		<tri-button ng-model="dataValue" />
-	</div>
+	</div>*@
+
+	<form name="myForm" novalidate>
+		<div><tri-button name="decision" ng-model="dataValue" /></div>
+	</form>
 
 	<div class="well">
 		Value:
