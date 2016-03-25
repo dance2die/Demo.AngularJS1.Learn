@@ -137,6 +137,7 @@
     <Content Include="Views\Home\ScopeControl.cshtml" />
     <Content Include="Views\Home\Transclusion.cshtml" />
     <Content Include="Views\Home\DirectiveControllers.cshtml" />
+    <Content Include="Views\Home\CustomForms.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -24,5 +24,10 @@ namespace CustomDirective.Controllers
 	    {
 		    return View();
 	    }
+
+	    public ActionResult CustomForms()
+	    {
+		    return View();
+	    }
     }
 }
