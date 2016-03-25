@@ -47,6 +47,10 @@
 							});
 						});
 
+						ctrl.$formatters.push(function(value) {
+							return value === "Huh?" ? "Not Sure" : value;
+						});
+
 						ctrl.$render = function () {
 							setSelected(ctrl.$viewValue || "Not Sure");
 						}
@@ -69,6 +73,7 @@
 			<option>Yes</option>
 			<option>No</option>
 			<option>Not Sure</option>
+			<option>Huh?</option>
 		</select>
 	</div>
 </div>
