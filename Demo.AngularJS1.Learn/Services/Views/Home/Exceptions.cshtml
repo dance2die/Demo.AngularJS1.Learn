@@ -7,9 +7,13 @@
 {
 	<script>
 		angular.module("exampleApp", [])
-			.controller("defaultCtrl", function ($scope) {
+			.controller("defaultCtrl", function ($scope, $exceptionHandler) {
 				$scope.throwEx = function () {
-					throw new Error("Triggered Exception");
+					try {
+						throw new Error("Triggered Exception");
+					} catch (ex) {
+						$exceptionHandler(ex.message, "Button Click");
+					}
 				}
 			});
 	</script>
