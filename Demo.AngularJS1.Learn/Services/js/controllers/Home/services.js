@@ -38,12 +38,12 @@
 						return debug;
 					}
 				},
-				$get: function() {
+				$get: function($log) {
 					return {
 						messageCount: 0,
 						log: function(message) {
 							if (debug) {
-								console.log("(LOG3" + (counter ? " + " + this.messageCount++ + ") " : ") ") + message);
+								$log.log("($LOG" + (counter ? " + " + this.messageCount++ + ") " : ") ") + message);
 							}
 						}
 					};
