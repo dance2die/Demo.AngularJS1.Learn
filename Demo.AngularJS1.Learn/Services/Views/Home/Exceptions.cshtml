@@ -1,0 +1,28 @@
+﻿
+@{
+	ViewBag.Title = "Exceptions";
+}
+
+@section ScriptBody
+{
+	<script>
+		angular.module("exampleApp", [])
+			.controller("defaultCtrl", function ($scope) {
+				$scope.throwEx = function () {
+					throw new Error("Triggered Exception");
+				}
+			});
+	</script>
+}
+
+<h2>Exceptions</h2>
+
+<div ng-app="exampleApp">
+	<div ng-controller="defaultCtrl">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<button class="btn btn-primary" ng-click="throwEx()">Throw Exception</button>
+			</div>
+		</div>
+	</div>
+</div>
